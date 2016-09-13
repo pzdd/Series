@@ -1,0 +1,32 @@
+<% include ./header.ejs %>
+<form id="myForm" action="/search" method="post">
+  <input type="text" name="query" placeholder="Search..." onkeyup="search();" value="<%= query %>"/>
+</form>
+  <table>
+      <caption><p><b>Listagem</b></p></caption>
+    <%if(series != null){%>
+    <% series.forEach(function(serie,idx){ %>
+      <tr>
+        <th>Nome:</th>
+        <th>Qtd_temporadas:</th>
+        <th>Ano:</th>
+        <th>Autor</th>
+        <th>
+        </th>
+      </tr>
+      <tr>
+        <td><%- serie.Nome %></td>
+        <td><%- serie.Qtd_temporadas %></td>
+        <td><%- serie.Ano %></td>
+        <td><%- serie.Autor %></td>
+        <td><a href="/editar/<%- serie._id%>">Editar</a></td>
+        <td><a href="/remover/<%- serie._id%>">Remover</a></td>
+      </tr>
+
+    <% })} else{%>
+      <p>
+        vazio
+      </p>
+    <% } %>
+  </table>
+<% include ./footer %>

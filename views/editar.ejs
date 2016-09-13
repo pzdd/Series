@@ -1,0 +1,44 @@
+<% include ./header.ejs %>
+<form class="" action="/editar/<%- serie._id%>" method="post">
+<table>
+  <caption><b><p>Editar Serie</p></b></caption>
+  <tr>
+    <th>
+      Nome:
+    </th>
+    <td>
+      <input type="text" name="Serie[Nome]" value="<%- serie.Nome %>">
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Qtd_temporadas:
+    </th>
+    <td>
+      <input type="text" name="Serie[Qtd_temporadas]" value="<%- serie.Qtd_temporadas%>">
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Ano:
+    </th>
+    <td>
+      <input type="text" name="Serie[Ano]" value="<%- serie.Ano%>">
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Autor:
+    </th>
+    <td>
+      <input type="text" name="Serie[Autor]" value="<%- serie.Autor %>">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <input type="submit" value="Editar">
+    </td>
+  </tr>
+</table>
+</form>
+<% include ./footer.ejs%>

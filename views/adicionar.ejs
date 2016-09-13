@@ -1,0 +1,13 @@
+<% include ./header.ejs %>
+  <form class="" action="/adicionar" method="post">
+  <label for="fnome">Nome:</label><br>
+  <input type="text" name="Serie[Nome]" id="fnome"/><br>
+  <label for="fqtd">Qtd_temporadas:</label><br>
+  <input type="text" name="Serie[Qtd_temporadas]" id="fqtd"/><br>
+  <label for="fano">Ano</label><br>
+  <input type="text" name="Serie[Ano]" id="fano"><br>
+  <label for="fautor">Autor:</label><br>
+  <input type="text" name="Serie[Autor]" id="fautor"><br><br>
+  <input type="submit" value="Cadastrar">
+  </form>
+<% include ./footer.ejs %>
