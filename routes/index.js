@@ -20,9 +20,21 @@ router.get('/', auth, function(req, res, next) {
 });
 
 router.post('/search', auth, function(req,res, next){
-  console.log(req.body.query);
-  Serie.find({Nome: req.body.query}, function(err,docs){
-    res.render('index',{'series':docs, 'query':req.body.query});
+  console.log(req.body.pesquisa);
+  Serie.find({Nome: String(req.body.pesquisa)}, function(err,docs){
+    console.log(docs.length);
+    res.json(docs.length);
+
+    if(err){
+      //pesquisa por autor,dps ano
+    }
+  });
+});
+
+router.post('/loadSearch', auth, function(req, res, next){
+  Serie.find({Nome: String(req.body.pesquisa)}, function(err,docs){
+    console.log(docs.length);
+    res.render('index',{'series':docs, 'query': req.body.pesquisa});
 
     if(err){
       //pesquisa por autor,dps ano
